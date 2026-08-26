@@ -53,4 +53,4 @@ jobs:
       with:
         name: package
         path: bin/*.apk
-S#start
+        #start
