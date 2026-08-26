@@ -17,8 +17,9 @@ jobs:
       with:
         python-version: "3.10"
 
-    - name: Install dependencies
+    - name: Install system dependencies
       run: |
+        sudo dpkg --add-architecture i386
         sudo apt-get update
         sudo apt-get install -y \
             python3-pip \
@@ -37,13 +38,26 @@ jobs:
             libgstreamer1.0-dev \
             gstreamer1.0-plugins-base \
             gstreamer1.0-plugins-good \
-            openjdk-17-jdk
+            openjdk-17-jdk \
+            unzip \
+            zip \
+            autoconf \
+            libtool \
+            pkg-config \
+            libncurses5-dev \
+            libncursesw5-dev \
+            libtinfo5 \
+            libffi-dev \
+            libssl-dev \
+            ant \
+            libstdc++6:i386 \
+            zlib1g:i386
 
-    - name: Install Buildozer
+    - name: Install Buildozer and Cython
       run: |
         pip install --upgrade pip
         pip install Cython==0.29.33 virtualenv
-        pip install buildozer
+        pip install --upgrade buildozer
 
     - name: Build with Buildozer
       run: |
@@ -54,5 +68,3 @@ jobs:
       with:
         name: package
         path: bin/*.apk
-
-# start
