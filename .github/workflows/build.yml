@@ -43,8 +43,6 @@ jobs:
             autoconf \
             libtool \
             pkg-config \
-            libncurses5-dev \
-            libncursesw5-dev \
             libffi-dev \
             libssl-dev \
             ant \
