@@ -20,34 +20,20 @@ jobs:
       run: |
         sudo dpkg --add-architecture i386
         sudo apt-get update
-        sudo apt-get install -y \
+        sudo apt-get install -y --no-install-recommends \
             python3-pip \
             build-essential \
             git \
-            ffmpeg \
-            libsdl2-dev \
-            libsdl2-image-dev \
-            libsdl2-mixer-dev \
-            libsdl2-ttf-dev \
-            libportmidi-dev \
-            libswscale-dev \
-            libavformat-dev \
-            libavcodec-dev \
-            zlib1g-dev \
-            libgstreamer1.0-dev \
-            gstreamer1.0-plugins-base \
-            gstreamer1.0-plugins-good \
-            openjdk-17-jdk \
-            unzip \
             zip \
+            unzip \
             autoconf \
             libtool \
             pkg-config \
-            libncurses5-dev \
-            libncursesw5-dev \
+            zlib1g-dev \
             libffi-dev \
             libssl-dev \
             ant \
+            openjdk-17-jdk \
             libstdc++6:i386 \
             zlib1g:i386
 
@@ -66,4 +52,3 @@ jobs:
       with:
         name: package
         path: bin/*.apk
-
